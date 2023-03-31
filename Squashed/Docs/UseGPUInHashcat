@@ -1,0 +1,9 @@
+https://miloserdov.org/?p=4726
+
+lsmod | grep -i nouveau
+echo -e "blacklist nouveau\noptions nouveau modeset=0\nalias nouveau off" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
+update-initramfs -u && reboot
+
+
+sudo apt install -y ocl-icd-libopencl1 nvidia-driver nvidia-cuda-toolkit
+nvidia-smi
