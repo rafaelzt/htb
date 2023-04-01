@@ -54,7 +54,7 @@ export HTB_TARGET=10.10.11.191
 #####################################
 ---
 Collected info
-User: ross
+User: ross (id: 1001)
 Get a kdbx file from /home/ross/Documents
 
 ---
